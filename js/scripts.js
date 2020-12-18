@@ -1,13 +1,13 @@
-function TEMPLATE(variable) {
+function process(variable) {
   let testVar = variable;
-  return "Secret Message 2";
+  return testVar;
 }
 
 $(document).ready(function() {
-  $("form#process").submit(function(event) {
+  $("form#calculateButton").submit(function(event) {
    event.preventDefault();
-    const number = parseInt($("#process1").val());
-    const result = TEMPLATE(number);
+    const userInput = parseInt($("#userInputForm").val());
+    const result = process(userInput);
     $("#output").text(result);
     $('#output').show();
   });
