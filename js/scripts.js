@@ -5,13 +5,10 @@ function TEMPLATE(variable) {
 
 $(document).ready(function() {
   $("form#process").submit(function(event) {
-    event.preventDefault();
+   event.preventDefault();
     const number = parseInt($("#process1").val());
-
-    $("#calculateButton").unbind().click(function() {
-      const result = TEMPLATE(number);
-      $("#output").text(result);
-      $('#output').show();
-    });
+    const result = TEMPLATE(number);
+    $("#output").text(result);
+    $('#output').show();
   });
 });
