@@ -1,16 +1,16 @@
 # _TEMPLATE_
 
-#### _Practice website to TEMPLATE, 2020-10-27_
+#### _Practice website to demonstrate arrays and looping, 2020-12-17_
 
 #### By _**Ash Porter (KirbyPaint)**_
 
 ## Description
 
-_The purpose of this TEMPLATE_
+_The purpose of this website is to demonstrate knowledge of arrays and looping._
 
 ## Setup/Installation Requirements
 
-* _REQUIREMENTS_
+* _A web browser_
 
 ## Known Bugs
 
@@ -22,7 +22,7 @@ _Discord: @KirbyPaint#0751_
 
 ## Technologies Used
 
-_LANGUAGES_
+_HTML, CSS (Bootstrap), JavaScript (jQuery)_
 
 ### License
 
