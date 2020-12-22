@@ -1,14 +1,3 @@
-// I think the plan of attack here is to take the number, and for each time it iterates, add the number to the array.
-// Have a function specifically dedicated to breaking apart the numbers in the array
-// For example: it would take 11 and in the array, that would be [1, 1]
-
-//Step one: for loop to add numbers to the array
-//Then output the numbers
-//Step One Complete
-
-//Step Two: take the numbers in the array and separate them into individual digits
-//Then recombine as a full array again.
-
 //This function's purpose is only to create an array containing the numbers that make up the user-provided number
 //Rename to arrayify
 function arrayify(variable) {
@@ -27,7 +16,6 @@ function arrayify(variable) {
 //Come to think of it, it might be better for this function to be put on the back burner for now...
 function explodeArray(arrayVariable) {
   const originalArray = arrayVariable;
-  console.log(originalArray);
   let newArray = []; // Blank array to hold the digits
   const arrayLength = originalArray.length; //Not a function.
   //For each element in the array, split it into components, and add components to the new array
@@ -40,6 +28,45 @@ function explodeArray(arrayVariable) {
 
 //Better way to do it will be to take each element of the array, check it for what numbers it has (or is) and then return it to the array.
 //Because returning the broken up array into a good array again sounds like it'll be a PITA.
+function numToText(arrayVariable) {
+  const originalArray = arrayVariable;
+  let newArray = []; // Blank array to hold the numbers and text
+  //const arrayLength = originalArray.length;
+  //For each element in the array, test if it has the number requested, and then transform based on the parameters given:
+  /*
+    Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"
+    Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"
+    Numbers that contain a 3: all digits are replaced (all digits) with "Won't you be my neighbor?"
+
+    These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third. So, for example, in your finished program,
+
+    The number 13 should be replaced with "Won't you be my neighbor?"
+    The number 21 should be replaced with "Boop".
+    The number 32 should be replaced with "Won't you be my neighbor?"
+
+    Example: If a user inputs a 5, the program should display a list of values: "0", "Beep!", "Boop", "Won't you be my neighbor?", 4, 5
+
+
+
+    CHRIST I have misinterpreted this
+
+    The above doesn't mean specifically that 13, 21, 32 are their own conditions
+    What it means is that:
+      13 has both a 1 and a 3. Therefore, it has a 1, so it should say BEEP, but since it ALSO has a 3, and that takes priority, it will then be "Won't you be my neighbor."
+  */
+
+  let arrayAsString = "";
+  originalArray.forEach(function(arrayElement) {
+    arrayAsString = arrayAsString.concat(arrayElement + ", "); //Modify the stuff in brackets to add commas, spacing, etc.
+  });
+  const regex13 = arrayAsString.replace(/13/gi, "Won't you be my neighbor?");
+    const regex21 = regex13.replace(/21/gi, "Boop!");
+      const regex32 = regex21.replace(/32/gi, "Won't you be my neighbor?");
+        const regex1 = regex32.replace(/[1]/gi, "Beep!");
+          const regex2 = regex1.replace(/[2]/gi, "Boop!");
+            const regex3 = regex2.replace(/[3]/gi, "Won't you be my neighbor?");
+  return regex3;
+}
 
 $(document).ready(function() {
   $("form#process").submit(function(event) {
@@ -47,9 +74,10 @@ $(document).ready(function() {
       const userInput = parseInt($("#userInputForm").val());
       let arrayifyTest = arrayify(userInput); // Creates array based on number provided from user
       let explodeArrayTest = explodeArray(arrayifyTest); // Explodes array into component numbers
+      let numToTextTest = numToText(arrayifyTest); // Explodes array into component numbers
       //$("#output").text(arrayifyTest); // Displays array
-      $("#output").text(explodeArrayTest); // Displays exploded array. Might override past one.
-      //Something here is broken.
+      //$("#output").text(explodeArrayTest); // Displays exploded array. Might override past one.
+      $("#output").text(numToTextTest); // Displays exploded array. Might override past one.
       $("#output").show();
   });
 });
