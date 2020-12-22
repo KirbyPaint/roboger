@@ -1,5 +1,10 @@
 function process(variable) {
-  let testVar = variable;
+  const testVar = variable;
+  for (let i = 0; i < testVar; i++) {
+    console.log(i);
+    console.log(testVar);
+    //return i; //to test the incrementation alone
+  }
   return testVar;
 }
 

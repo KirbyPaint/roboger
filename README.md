@@ -16,9 +16,10 @@ _The purpose of this website is to demonstrate knowledge of arrays and looping._
 
 _TEMPLATE SPECS BELOW TO BE FILLED OUT AS TESTS PASS_
 
-_Describe: beepBoop()_
-_Test: "It should return an array with a 0 if the number 0 is inputted"_
-_Expect(beepBoop(0).toEqual([0]);_
+_Describe: process()_
+_Test: "Current test: iteration"_
+_Expect(beepBoop(10).toEqual([10]);_
+_Status: Passed_
 
 ## Known Bugs
 
