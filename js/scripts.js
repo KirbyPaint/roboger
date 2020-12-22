@@ -53,19 +53,31 @@ function numToText(arrayVariable) {
     The above doesn't mean specifically that 13, 21, 32 are their own conditions
     What it means is that:
       13 has both a 1 and a 3. Therefore, it has a 1, so it should say BEEP, but since it ALSO has a 3, and that takes priority, it will then be "Won't you be my neighbor."
+
+      plaintext:
+      if (array index CONTAINS 3) {
+        replace entire element with "Won't you be my neighbor?"
+      }
+      else if (array index CONTAINS 2) {
+        replace entire element with "Boop"
+      }
+      else if (array index CONTAINS 1) {
+        replace entire element with "Beep"
+      }
+      else {
+        append the normal number to the array
+      }
   */
 
   let arrayAsString = "";
   originalArray.forEach(function(arrayElement) {
     arrayAsString = arrayAsString.concat(arrayElement + ", "); //Modify the stuff in brackets to add commas, spacing, etc.
   });
-  const regex13 = arrayAsString.replace(/13/gi, "Won't you be my neighbor?");
-    const regex21 = regex13.replace(/21/gi, "Boop!");
-      const regex32 = regex21.replace(/32/gi, "Won't you be my neighbor?");
-        const regex1 = regex32.replace(/[1]/gi, "Beep!");
-          const regex2 = regex1.replace(/[2]/gi, "Boop!");
-            const regex3 = regex2.replace(/[3]/gi, "Won't you be my neighbor?");
-  return regex3;
+    const regex3 = arrayAsString.replace(/3+/g, "Won't you be my neighbor?");
+      const regex2 = regex3.replace(/2+/g, "Boop!");
+        const regex1 = regex2.replace(/1+/g, "Beep!");
+  return regex1;
+  // This technically mostly works but is giving me a headache so I will complete the project later.
 }
 
 $(document).ready(function() {
