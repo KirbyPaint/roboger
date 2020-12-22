@@ -20,12 +20,36 @@ function arrayify(variable) {
   return numbersArray;
 }
 
+//This function will explode the array into its component numbers, and return THAT as a new array
+//Function explodeArray
+//I wonder if I can define the parameters in the function, I don't like not doing that, seems too loose
+
+//Come to think of it, it might be better for this function to be put on the back burner for now...
+function explodeArray(arrayVariable) {
+  const originalArray = arrayVariable;
+  console.log(originalArray);
+  let newArray = []; // Blank array to hold the digits
+  const arrayLength = originalArray.length; //Not a function.
+  //For each element in the array, split it into components, and add components to the new array
+  for (let i = 0; i < arrayLength; i++) {
+    newArray.push(i);
+  }
+  //For now, I just want to see that the function performs at all.
+  return newArray;
+}
+
+//Better way to do it will be to take each element of the array, check it for what numbers it has (or is) and then return it to the array.
+//Because returning the broken up array into a good array again sounds like it'll be a PITA.
+
 $(document).ready(function() {
   $("form#process").submit(function(event) {
     event.preventDefault();
       const userInput = parseInt($("#userInputForm").val());
-      let result = arrayify(userInput);
-      $("#output").text(result);
+      let arrayifyTest = arrayify(userInput); // Creates array based on number provided from user
+      let explodeArrayTest = explodeArray(arrayifyTest); // Explodes array into component numbers
+      //$("#output").text(arrayifyTest); // Displays array
+      $("#output").text(explodeArrayTest); // Displays exploded array. Might override past one.
+      //Something here is broken.
       $("#output").show();
   });
 });
