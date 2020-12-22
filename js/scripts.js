@@ -6,9 +6,8 @@ function process(variable) {
 $(document).ready(function() {
   $("form#process").submit(function(event) {
     event.preventDefault();
-      const number1 = parseInt($("#userInputForm").val());
-      //const result = add(number1, number2);
-      const result = number1;
+      const input = parseInt($("#userInputForm").val());
+      const result = process(input);
       $("#output").text(result);
       $("#output").show();
   });
