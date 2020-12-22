@@ -4,11 +4,12 @@ function process(variable) {
 }
 
 $(document).ready(function() {
-  $("form#calculateButton").submit(function(event) {
-   event.preventDefault();
-    const userInput = parseInt($("#userInputForm").val());
-    const result = process(userInput);
-    $("#output").text(result);
-    $('#output').show();
+  $("form#process").submit(function(event) {
+    event.preventDefault();
+      const number1 = parseInt($("#userInputForm").val());
+      //const result = add(number1, number2);
+      const result = number1;
+      $("#output").text(result);
+      $("#output").show();
   });
 });
