@@ -14,17 +14,15 @@ _The purpose of this website is to demonstrate knowledge of arrays and looping._
 
 ## Specifications
 
-_SPECS BELOW TO BE FILLED OUT AS TESTS PASS_
-
 _Describe: arrayify()_
 _Test: "Function will take user input and return input as an array containing all digits from 0 to the number submitted by the user."_
 _Expect(arrayify(10).toEqual([0,1,2,3,4,5,6,7,8,9,10]);_
 _Status: Passed_
 
-_Describe: explodeArray()_
-_Test: "Function will take existing array and break it into its component parts."_
-_Expect(explodeArray(oldArray[15]).toEqual(newArray[0,1,2,3,4,5,6,7,8,9,1,0,1,1,1,2,1,3,1,4,1,5]);_
-_Status: Untested_
+_Describe: numToText()_
+_Test: "Function will user inputted number and create an array, then convert the array to text, and check if the array's text element contains a specific number and append the replacement to the array."_
+_Expect(explodeArray(oldArray[50]).toEqual(newArray[0, Beep, Boop, Won't you be my neighbor?, 4, 5, 6, 7, 8, 9, Beep, Beep, Boop, Won't you be my neighbor?, Beep, Beep, Beep, Beep, Beep, Beep, Boop, Boop, Boop, Won't you be my neighbor?, Boop, Boop, Boop, Boop, Boop, Boop, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, Won't you be my neighbor?, 40, Beep, Boop, Won't you be my neighbor?, 44, 45, 46, 47, 48, 49, 50]);_
+_Status: Passed_
 
 ## Known Bugs
 
